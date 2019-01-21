@@ -1,2 +1,2 @@
 # TextClassification
-Implement text classification by Pytorch
+Implement text classification by Pytorch with Multi-GPU
