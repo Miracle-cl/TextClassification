@@ -1,4 +1,5 @@
 ## cited from https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Text-Classification
+## more info in Attention_Mechanism
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
