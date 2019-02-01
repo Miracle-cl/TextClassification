@@ -1,3 +1,4 @@
+# A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING
 import pickle
 import numpy as np
 import time
