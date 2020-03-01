@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 from transformers import (AlbertConfig, AlbertTokenizer, AlbertPreTrainedModel, AlbertModel,
-                          get_linear_schedule_with_warmup, AdamW, 
+                          get_linear_schedule_with_warmup, AdamW,
                           WEIGHTS_NAME, CONFIG_NAME, )
 
 
@@ -37,10 +37,11 @@ configuration = AlbertConfig(hidden_size=768,
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = AlBertForClassification(configuration)
 
+
 # Initializing an ALBERT-xlarge style configuration
 # configuration = AlbertConfig(hidden_size=2048,
 #     num_attention_heads=16,
-#     num_hidden_layers=24, 
+#     num_hidden_layers=24,
 #     intermediate_size=8192,
 #     num_labels=133)
 # need more cuda memory

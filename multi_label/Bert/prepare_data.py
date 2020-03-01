@@ -59,6 +59,7 @@ def truncate_pad_id(input_ids, tokenizer, max_len=256):
     attention_masks = prepare_attention_mask(new_inp_ids, pad_id)
     return new_inp_ids, attention_masks
 
+
 if __name__ == '__main__':
     sents = ['aa bb', 'cc dd'] # List of str (sentence)
     labels = [[], []] # multi_labels
@@ -74,7 +75,7 @@ if __name__ == '__main__':
     test_input_ids, test_attention_masks = truncate_pad_id(test_sent_ids, tokenizer)
 
     # >> 3rd: split train set and val set
-    train_inputs, val_inputs, train_labels, val_labels = train_test_split(input_ids, labels, 
+    train_inputs, val_inputs, train_labels, val_labels = train_test_split(input_ids, labels,
                                                                 random_state=2020, test_size=0.15)
     ## Do the same for the masks.
     train_masks, val_masks, _, _ = train_test_split(attention_masks, labels,
@@ -95,9 +96,9 @@ if __name__ == '__main__':
     test_masks = torch.tensor(test_attention_masks).long()
     test_labels = torch.tensor(test_labels).float()
 
-    _process_data = {'train_inputs': train_inputs, 'val_inputs': val_inputs, 'test_inputs': test_inputs, 
-                    'train_labels': train_labels, 'val_labels': val_labels, 'test_labels': test_labels, 
-                    'train_masks': train_masks, 'val_masks': val_masks, 'test_masks': test_masks, 
+    _process_data = {'train_inputs': train_inputs, 'val_inputs': val_inputs, 'test_inputs': test_inputs,
+                    'train_labels': train_labels, 'val_labels': val_labels, 'test_labels': test_labels,
+                    'train_masks': train_masks, 'val_masks': val_masks, 'test_masks': test_masks,
                     }
     with open('./process_data.pkl', 'wb') as f:
         pickle.dump(_process_data, f)

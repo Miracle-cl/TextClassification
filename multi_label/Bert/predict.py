@@ -1,13 +1,13 @@
 import os
 import torch
 import numpy as np
-
 from transformers import BertConfig, BertTokenizer
 
 from .ft_bert import BertForClassification
 
+
 class ModelPredict:
-    def __init__(self, id2label, active_value=0.5, max_num=3, max_len=256, 
+    def __init__(self, id2label, active_value=0.5, max_num=3, max_len=256,
                  model_path='./bert_models/'):
         self.max_len = max_len
         self.half_len = max_len // 2
