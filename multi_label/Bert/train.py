@@ -81,7 +81,7 @@ def train_epoch(model, device, epoch, train_dataloader, validation_dataloader,
                         (epoch, step, time.time()-t0, train_loss/step)
             print(log_str)
             t0 = time.time()
-        train_loss /= len(train_dataloader)
+    train_loss /= len(train_dataloader)
 
     model.eval()
     eval_loss = 0
